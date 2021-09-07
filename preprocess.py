@@ -153,8 +153,8 @@ class Preprocessor:
         #features = np.concatenate(features, axis=1)
         mean = []
         std = []
-
-        for ch in range(F):
+        C = batch_y.shape
+        for ch in range(C):
             mean.append(np.mean(features[ch], axis=0, keepdims=True))
             std.append(np.std(features[ch], axis=0, keepdims=True))
         mean = np.stack(mean)[None, ...]
