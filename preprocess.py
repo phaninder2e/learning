@@ -124,7 +124,7 @@ class Preprocessor:
         """
         print('Extracting scalar......\n')
         self.scalar_h5_dir.mkdir(parents=True, exist_ok=True)
-        C=[]
+        
         cuda_enabled = not self.args.no_cuda and torch.cuda.is_available()
         train_set = BaseDataset(self.args, self.cfg, self.dataset)
         data_generator = DataLoader(
@@ -153,7 +153,10 @@ class Preprocessor:
         #features = np.concatenate(features, axis=1)
         mean = []
         std = []
-        
+        C
+        print(C)
+        print(batch_y.shape)
+      
         for ch in range(C):
             mean.append(np.mean(features[ch], axis=0, keepdims=True))
             std.append(np.std(features[ch], axis=0, keepdims=True))
