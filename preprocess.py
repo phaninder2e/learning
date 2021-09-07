@@ -154,7 +154,7 @@ class Preprocessor:
         mean = []
         std = []
 
-        for ch in range(C):
+        for ch in range(F):
             mean.append(np.mean(features[ch], axis=0, keepdims=True))
             std.append(np.std(features[ch], axis=0, keepdims=True))
         mean = np.stack(mean)[None, ...]
