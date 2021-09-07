@@ -124,7 +124,7 @@ class Preprocessor:
         """
         print('Extracting scalar......\n')
         self.scalar_h5_dir.mkdir(parents=True, exist_ok=True)
-         C=[]
+        C=[]
         cuda_enabled = not self.args.no_cuda and torch.cuda.is_available()
         train_set = BaseDataset(self.args, self.cfg, self.dataset)
         data_generator = DataLoader(
